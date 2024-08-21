@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập tuổi của bạn</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+        }
+        table {
+            margin-top: 20px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nhập số tuổi của bạn:</h1>
+    <input type="number" id="ageInput" placeholder="Nhập tuổi">
+    <button onclick="showAge()">Gửi</button>
+
+    <table id="resultTable" style="display: none;">
+        <tr>
+            <th>Kết quả</th>
+        </tr>
+        <tr>
+            <td id="result"></td>
+        </tr>
+    </table>
+
+    <script>
+        function showAge() {
+            const age = document.getElementById('ageInput').value;
+
+            // Kiểm tra nếu người dùng chưa nhập tuổi
+            if (!age) {
+                alert("Vui lòng nhập số tuổi của bạn");
+                return;
+            }
+
+            // Hiển thị bảng kết quả
+            const resultTable = document.getElementById('resultTable');
+            const result = document.getElementById('result');
+
+            result.innerText = `Số tuổi của bạn là: ${age}`;
+            resultTable.style.display = "table";
+        }
+    </script>
+</body>
+</html>
